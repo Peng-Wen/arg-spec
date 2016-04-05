@@ -1,2 +1,2 @@
 # arg-spec
-Spec function arguments and use that for validation.
+Provide spec for function arguments and use that for validation.
