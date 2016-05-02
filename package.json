@@ -1,0 +1,28 @@
+{
+  "name": "arg-spec",
+  "version": "1.0.0",
+  "description": "Provide spec for function arguments and use that for validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peng-Wen/arg-spec.git"
+  },
+  "keywords": [
+    "arg"
+  ],
+  "author": "Peng-Wen Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peng-Wen/arg-spec/issues"
+  },
+  "homepage": "https://github.com/Peng-Wen/arg-spec#readme",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
