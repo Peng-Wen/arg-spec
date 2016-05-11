@@ -1,12 +1,19 @@
-
 function addIsRequired(typeFn) {
     typeFn.isRequired = function(value) {
         return (typeof value !== 'undefined') && typeFn(value);
     };
 }
 
-function string(value) {
-    return (typeof value === 'undefined') || (typeof value === 'string');
+function array(value) {
+    return (typeof value === 'undefined') || Array.isArray(value);
+}
+
+function bool(value) {
+    return (typeof value === 'undefined') || (typeof value === 'boolean');
+}
+
+function func(value) {
+    return (typeof value === 'undefined') || (typeof value === 'function');
 }
 
 function number(value) {
@@ -17,10 +24,32 @@ function object(value) {
     return (typeof value === 'undefined') || (typeof value === 'object');   
 }
 
+function string(value) {
+    return (typeof value === 'undefined') || (typeof value === 'string');
+}
+
+function instanceOf(constructorFn) {
+    return function(value) {
+        return (typeof value === 'undefined') || (typeof constructorFn === 'function' && value instanceof constructorFn);
+    };
+}
+
+function oneOf(values) {
+    values = values || [];
+    return function(value) {
+        return (typeof value === 'undefined') || values.indexOf(value) !== -1;
+    };
+}
+
 var Types = {
-    string: string,
+    array: array,
+    bool: bool,
+    func: func,
     number: number,
-    object: object
+    object: object,
+    string: string,
+    instanceOf: instanceOf,
+    oneOf: oneOf
 };
 
 for (var typeFnName in Types) {
